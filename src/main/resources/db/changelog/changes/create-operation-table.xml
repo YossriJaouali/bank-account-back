@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+    <changeSet author="YJ" id="3">
+        <createTable tableName="bank_account_operations">
+            <column autoIncrement="true" name="id" type="number">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="operation_type" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="amount" type="double">
+                <constraints nullable="false"/>
+            </column>
+            <column name="creation_date" type="timestamp">
+                <constraints nullable="false"/>
+            </column>
+            <column name="bank_account_id" type="number">
+                <constraints nullable="false"/>
+            </column>
+            <column name="description" type="varchar(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <rollback>
+            <dropTable tableName="operation"/>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
