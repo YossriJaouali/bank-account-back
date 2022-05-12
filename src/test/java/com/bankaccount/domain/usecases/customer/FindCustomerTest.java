@@ -10,7 +10,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("Test Bank Account service")
+@DisplayName("Test Customer service")
 public class FindCustomerTest {
 
     public static final Long CUSTOMER_IDENTIFIER = 130876L;
